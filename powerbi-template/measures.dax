@@ -1,0 +1,25 @@
+-- Deposits
+Total Deposits = SUM(deposits[DepositBalance])
+Total New Deposits = SUM(deposits[NewDeposits])
+Total Withdrawals = SUM(deposits[Withdrawals])
+Net Deposit Flow = [Total New Deposits] - [Total Withdrawals]
+
+Deposit Growth MoM % =
+VAR PrevVal = CALCULATE([Total Deposits], DATEADD('date'[Date], -1, MONTH))
+RETURN DIVIDE([Total Deposits] - PrevVal, PrevVal)
+
+-- Loans
+Total Loans = SUM(loans[LoanBalance])
+Total Disbursements = SUM(loans[Disbursements])
+Total Repayments = SUM(loans[Repayments])
+Net Loan Flow = [Total Disbursements] - [Total Repayments]
+Total NPL = SUM(loans[NPLAmount])
+NPL Ratio % = DIVIDE([Total NPL], [Total Loans])
+Total Interest Income = SUM(loans[InterestIncome])
+
+Loan Growth MoM % =
+VAR PrevVal = CALCULATE([Total Loans], DATEADD('date'[Date], -1, MONTH))
+RETURN DIVIDE([Total Loans] - PrevVal, PrevVal)
+
+-- Combined
+Loan-to-Deposit Ratio % = DIVIDE([Total Loans], [Total Deposits])
