@@ -1,0 +1,7 @@
+Date,Branch,Product,CustomerSegment,DepositBalance,NewDeposits,Withdrawals
+2025-01-01,Downtown,Checking,Retail,12000000,900000,650000
+2025-02-01,Downtown,Savings,Retail,12600000,980000,740000
+2025-03-01,North,Time Deposit,SME,9900000,820000,510000
+2025-04-01,North,Checking,Corporate,11100000,870000,620000
+2025-05-01,South,Savings,Retail,13400000,1020000,760000
+2025-06-01,South,Time Deposit,SME,10500000,790000,540000
